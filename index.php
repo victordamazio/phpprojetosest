@@ -93,7 +93,7 @@
 							    echo "Trabalho de Conclusão de Curso";
 							    break;						
 						}
-					?></td>						
+					?></td>
 
 					<!--
 					<td><?php //echo $row['projeto_eixo'] ?></td>
@@ -138,6 +138,7 @@
         		<option value="8"  >Urbanização</option>
         		<option value="9"  >Governança</option>
         	</select>
+        </div>
         <div class="select-group">
 			<label>Tipo</label>
         	<select type="text" name="tipo" class="ls-select" value="<?php echo $tipo; ?>">
@@ -146,8 +147,17 @@
           		<option value="3"  >Trabalho de Conclusão de Curso</option>
         	</select>
         </div>
-			<!-- <input type="text" name="eixo" value="<?php // echo $eixo; ?>"> --> 
+        <div class="box-group">
+	        <input type="checkbox" name="onu1" value="<?php echo $onu1; ?>">
+			<label> Objetivo 1</label><br>
+			<input type="checkbox" name="onu2" value="<?php echo $onu2; ?>">
+			<label> Objetivo 2</label><br>
+			<input type="checkbox" name="onu3" value="<?php echo $onu3; ?>">
+			<label> Objetivo 3</label><br>			
 		</div>
+
+		<!-- <input type="text" name="eixo" value="<?php // echo $eixo; ?>"> --> 
+
 		<div class="input-group">
 		<?php if ($edit_state == false): ?> <!-- Se o estado de edição for falso, o botão é o de Save, caso seja verdadeiro, temos o botão de Update --> 
 			<button type="submit" name="save" class="btn">Save</button>
