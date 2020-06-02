@@ -12,6 +12,9 @@
 		$just = $record['projeto_justificativa'];
 		$eixo = $record['projeto_eixo'];
 		$tipo = $record['projeto_tipo'];
+		$onu1 = $record['projeto_onu1'];
+		$onu2 = $record['projeto_onu2'];
+		$onu3 = $record['projeto_onu3'];
 		$id = $record['projeto_id'];
 	}
 ?>
@@ -128,33 +131,35 @@
 		<div class="select-group">
 			<label>Eixo</label>
 			<select type="text" name="eixo" class="ls-select" value="<?php echo $eixo; ?>">
-         		<option value="1"  >Educação e Cultura</option>
-          		<option value="2"  >Energia</option>
-        		<option value="3"  >Indústria e Negócios</option>
-        		<option value="4"  >Meio Ambiente</option>
-        		<option value="5"  >Mobilidade e Segurança</option>
-        		<option value="6"  >Saúde e Qualidade de Vida</option>
-        		<option value="7"  >TIC</option>
-        		<option value="8"  >Urbanização</option>
-        		<option value="9"  >Governança</option>
+         		<option value="1" <?=($eixo == '1')?'selected':''?> >Educação e Cultura</option>
+          		<option value="2" <?=($eixo == '2')?'selected':''?> >Energia</option>
+        		<option value="3" <?=($eixo == '3')?'selected':''?> >Indústria e Negócios</option>
+        		<option value="4" <?=($eixo == '4')?'selected':''?> >Meio Ambiente</option>
+        		<option value="5" <?=($eixo == '5')?'selected':''?> >Mobilidade e Segurança</option>
+        		<option value="6" <?=($eixo == '6')?'selected':''?> >Saúde e Qualidade de Vida</option>
+        		<option value="7" <?=($eixo == '7')?'selected':''?> >TIC</option>
+        		<option value="8" <?=($eixo == '8')?'selected':''?> >Urbanização</option>
+        		<option value="9" <?=($eixo == '9')?'selected':''?> >Governança</option>
         	</select>
         </div>
         <div class="select-group">
 			<label>Tipo</label>
         	<select type="text" name="tipo" class="ls-select" value="<?php echo $tipo; ?>">
-          		<option value="1"  >Projeto Smart</option>
-          		<option value="2"  >Iniciação Científica</option>
-          		<option value="3"  >Trabalho de Conclusão de Curso</option>
+          		<option value="1" <?=($tipo == '1')?'selected':''?> >Projeto Smart</option>
+          		<option value="2" <?=($tipo == '2')?'selected':''?> >Iniciação Científica</option>
+          		<option value="3" <?=($tipo == '3')?'selected':''?> >Trabalho de Conclusão de Curso</option>
         	</select>
         </div>
         <div class="box-group">
-	        <input type="checkbox" name="onu1" value="<?php echo $onu1; ?>">
+	        <input type="checkbox" name="onu[]" value="1" <?php if ($onu1 == 1) echo "checked='checked'"; ?>>
 			<label> Objetivo 1</label><br>
-			<input type="checkbox" name="onu2" value="<?php echo $onu2; ?>">
+			<input type="checkbox" name="onu[]" value="2" <?php if ($onu2 == 1) echo "checked='checked'"; ?>>
 			<label> Objetivo 2</label><br>
-			<input type="checkbox" name="onu3" value="<?php echo $onu3; ?>">
+			<input type="checkbox" name="onu[]" value="3" <?php if ($onu3 == 1) echo "checked='checked'"; ?>>
 			<label> Objetivo 3</label><br>			
 		</div>
+
+		<!-- value="<?php // echo $onu1; ?>" -->
 
 		<!-- <input type="text" name="eixo" value="<?php // echo $eixo; ?>"> --> 
 
